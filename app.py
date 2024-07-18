@@ -19,11 +19,10 @@ if st.button("Generate Image"):
 
         if response.status_code == 200:
             # Convert the response content to an image
-            json_obj = json.loads(response._content)
-            st.write(json_obj)
-            image = Image.open(BytesIO(json_obj['Img']))
+            st.write(response._content)
+            image = Image.open(BytesIO(response._content))
             # Display the image
-            st.image(image, caption=json_obj["label"], use_column_width=True)
+            st.image(image, caption=label, use_column_width=True)
         else:
             st.write("Error: Unable to get the response from the server.")
     else:
