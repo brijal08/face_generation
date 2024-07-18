@@ -19,7 +19,6 @@ if st.button("Generate Image"):
 
         if response.status_code == 200:
             # Convert the response content to an image
-            st.write(response._content)
             image = Image.open(BytesIO(response._content))
             # Display the image
             st.image(image, caption=label, use_column_width=True)
