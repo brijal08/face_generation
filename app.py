@@ -6,8 +6,6 @@ from PIL import Image
 
 st.title('Face image generation using cGAN')
 
-image_file = st.file_uploader("Upload Image")
-
 # Text input for label
 label = st.text_input("Enter Label:")
 
